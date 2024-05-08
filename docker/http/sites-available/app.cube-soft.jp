@@ -1,0 +1,22 @@
+server {
+    server_name app.cube-soft.jp;
+    listen      80;
+    return      301 https://$host$request_uri;
+}
+
+server {
+    server_name             app.cube-soft.jp;
+    listen                  443 ssl http2;
+    resolver                8.8.8.8;
+    ssl_protocols           TLSv1 TLSv1.1 TLSv1.2 TLSv1.3;
+    ssl_certificate         /etc/nginx/ssl/cube-soft.jp.crt;
+    ssl_certificate_key     /etc/nginx/ssl/cube-soft.jp.key;
+    ssl_trusted_certificate /etc/nginx/ssl/trusted.crt;
+    ssl_stapling            on;
+    ssl_stapling_verify     on;
+
+    root        /var/www/public;
+    index       index.html;
+
+    location ~ \.(png|gif|jpg)$ { expires 7d; }
+}
