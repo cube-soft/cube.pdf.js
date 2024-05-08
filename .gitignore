@@ -1,0 +1,47 @@
+# node/grunt dependency directories
+node_modules/
+
+# composer vendor directory
+/vendor
+
+# components loaded via Bower
+/bower_components
+
+# other directories
+tmp/
+out/
+
+# OS generated files
+ehthumbs.db
+Thumbs.db
+
+# starting with . or ~
+.*
+~*
+
+# log files and databases
+*.log
+*.sql
+*.sqlite
+
+# compiled files
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# packaged files
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# track these files, if they exist
+!.gitignore
+!.gitattributes
+!.editorconfig
